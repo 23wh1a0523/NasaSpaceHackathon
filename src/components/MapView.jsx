@@ -1,29 +1,31 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Globe from "react-globe.gl";
 import L from "leaflet";
-import * as THREE from "three";
-import { fetchDisasterEvents } from "../services/eonet";
+// Use the same anime-style logo URLs as in DisasterFilter
+const wildfireIcon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmVw0p9799tF8TNajuOrdJgIS4WD0vAsiAVw&s";
+const volcanoIcon = "https://images.newscientist.com/wp-content/uploads/2020/12/21145328/volcanoes-f0r7pt_web.jpg";
+const stormIcon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlRiHy0JNX2M1u9FPPUfBeC8qO_a_Bx-WpGA&s";
+const floodIcon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPV3T_uEDL94my6Zpz-JStnuVc7t_ml6kUkw&s";
+const earthquakeIcon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZsdT4vS6SSQyLBsoNm1wVn7QqXIX-4s3ieg&s";
 
-// Fix Leaflet icon issue
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
-
-// High-quality disaster icons
 const disasterIcons = {
+<<<<<<< HEAD
   Wildfires: "https://cdn.britannica.com/42/188142-050-4D4D9D19/wildfire-Stanislaus-National-Forest-California-2013.jpg?w=400&h=300&c=crop", // fire
   Volcanoes: "https://naturalhistory.si.edu/sites/default/files/styles/resource_side/public/media/image/arenal-volcano-olger-aragon-081029.jpg.webp?itok=Gzft99RE", // volcano
   "Severe Storms": "https://www.timeforkids.com/wp-content/uploads/2018/08/Storms-Images.jpg", // storm
   Floods: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPXQvQEN6rVUdAXxS6WSN7T-DiDKuR2exr4w&s", // flood
   Earthquakes: "https://gelogia.com/wp-content/uploads/2024/10/earthquake-1080x599.jpg", // earthquake
+=======
+  Wildfires: wildfireIcon,
+  Volcanoes: volcanoIcon,
+  "Severe Storms": stormIcon,
+  Floods: floodIcon,
+  Earthquakes: earthquakeIcon,
+>>>>>>> 2d6a0e2 (Second Commit)
 };
 
 const MapView = ({ events, viewMode }) => {
-  const [is3D, setIs3D] = useState(false);
   const globeRef = useRef();
 
   // Prepare data for 3D markers
@@ -35,34 +37,14 @@ const MapView = ({ events, viewMode }) => {
       lng: coords[0],
       title: event.title,
       category: event.categories[0].title,
-      icon: disasterIcons[event.categories[0].title] || disasterIcons.Wildfires,
+      icon: disasterIcons[event.categories[0].title] || wildfireIcon,
     };
   }).filter(Boolean);
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
-      {/* Toggle Button */}
-      <div
-        style={{
-          position: "absolute",
-          top: "15px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          backgroundColor: "white",
-          padding: "10px 18px",
-          borderRadius: "10px",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.3)",
-          zIndex: 1000,
-          fontWeight: "bold",
-          cursor: "pointer",
-        }}
-        onClick={() => setIs3D(!is3D)}
-      >
-        {is3D ? "Switch to 2D Map" : "Switch to 3D Globe"}
-      </div>
-
       {/* 2D Map */}
-      {(!is3D && viewMode === "2D") ? (
+      {viewMode === "2D" ? (
         <MapContainer center={[20, 0]} zoom={2} style={{ height: "100%", width: "100%" }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -72,10 +54,10 @@ const MapView = ({ events, viewMode }) => {
             event.geometry.map((geo, index) => {
               if (!geo.coordinates || geo.coordinates.length < 2) return null;
               const category = event.categories[0].title;
-              const iconUrl = disasterIcons[category] || disasterIcons.Wildfires;
+              const iconUrl = disasterIcons[category] || wildfireIcon;
 
               const customIcon = new L.Icon({
-                iconUrl,
+                iconUrl: iconUrl,
                 iconSize: [35, 35],
                 iconAnchor: [17, 34],
                 popupAnchor: [0, -30],
@@ -115,11 +97,11 @@ const MapView = ({ events, viewMode }) => {
           enablePointerInteraction={true}
           htmlElementsData={globeMarkers}
           htmlElement={(d) => {
-            const el = document.createElement("div");
+            const el = document.createElement("img");
+            el.src = d.icon;
+            el.alt = d.title;
             el.style.width = "28px";
             el.style.height = "28px";
-            el.style.backgroundImage = `url(${d.icon})`;
-            el.style.backgroundSize = "cover";
             el.style.borderRadius = "50%";
             el.style.boxShadow = "0 0 6px rgba(0,0,0,0.6)";
             el.style.cursor = "pointer";
