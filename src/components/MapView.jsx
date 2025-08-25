@@ -15,11 +15,11 @@ L.Icon.Default.mergeOptions({
 
 // High-quality disaster icons
 const disasterIcons = {
-  Wildfires: "https://cdn-icons-png.flaticon.com/512/578/578120.png", // fire
-  Volcanoes: "https://cdn-icons-png.flaticon.com/512/4260/4260523.png", // volcano
-  "Severe Storms": "https://cdn-icons-png.flaticon.com/512/1146/1146869.png", // storm
-  Floods: "https://cdn-icons-png.flaticon.com/512/2843/2843536.png", // flood
-  Earthquakes: "https://cdn-icons-png.flaticon.com/512/1684/1684375.png", // earthquake
+  Wildfires: "https://cdn.britannica.com/42/188142-050-4D4D9D19/wildfire-Stanislaus-National-Forest-California-2013.jpg?w=400&h=300&c=crop", // fire
+  Volcanoes: "https://naturalhistory.si.edu/sites/default/files/styles/resource_side/public/media/image/arenal-volcano-olger-aragon-081029.jpg.webp?itok=Gzft99RE", // volcano
+  "Severe Storms": "https://www.timeforkids.com/wp-content/uploads/2018/08/Storms-Images.jpg", // storm
+  Floods: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPXQvQEN6rVUdAXxS6WSN7T-DiDKuR2exr4w&s", // flood
+  Earthquakes: "https://gelogia.com/wp-content/uploads/2024/10/earthquake-1080x599.jpg", // earthquake
 };
 
 const MapView = ({ events, viewMode }) => {
