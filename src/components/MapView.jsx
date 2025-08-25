@@ -219,8 +219,20 @@ const MapView = ({ events, viewMode }) => {
       <button onClick={() => setShowForm(true)} style={{ position: 'absolute', top: 24, right: 24, zIndex: 1000, background: '#007bff', color: '#fff', border: 'none', borderRadius: 8, padding: '10px 22px', fontWeight: 600, fontSize: 17, boxShadow: '0 2px 8px rgba(0,0,0,0.10)', cursor: 'pointer' }}>Report Disaster</button>
       {showForm && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.18)', zIndex: 2000 }}>
-          <form onSubmit={handleFormSubmit} style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: '#fff', borderRadius: 14, boxShadow: '0 8px 32px rgba(0,0,0,0.22)', padding: '32px 38px', minWidth: 320 }}>
-            <h2 style={{ marginTop: 0, marginBottom: 18, color: '#1976d2' }}>Report Disaster</h2>
+          <form onSubmit={handleFormSubmit} style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundImage: 'url(https://wallpapers.com/images/featured/outer-space-3pae4flbryaputyl.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            borderRadius: 14,
+            boxShadow: '0 8px 32px rgba(0,0,0,0.22)',
+            padding: '32px 38px',
+            minWidth: 320
+          }}>
+            <h2 style={{ marginTop: 0, marginBottom: 18, color: '#1976d2', textShadow: '0 2px 8px #fff' }}>Report Disaster</h2>
             <div style={{ marginBottom: 14 }}>
               <input name="title" value={formData.title} onChange={handleFormChange} placeholder="Disaster Title" style={{ width: '100%', padding: '10px', fontSize: 16, borderRadius: 8, border: '1.5px solid #1976d2', marginBottom: 8 }} />
               <select name="category" value={formData.category} onChange={handleFormChange} style={{ width: '100%', padding: '10px', fontSize: 16, borderRadius: 8, border: '1.5px solid #1976d2', marginBottom: 8 }}>
@@ -282,7 +294,7 @@ const MapView = ({ events, viewMode }) => {
           width={window.innerWidth}
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
           bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-          backgroundColor="#e6f7ff" // Light blue sky look
+          backgroundImageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtGI8ZVr1OjuVLZADctDgIxNPrJTXItsdkIw&s"
           showAtmosphere={true}
           atmosphereColor="lightskyblue"
           atmosphereAltitude={0.15}

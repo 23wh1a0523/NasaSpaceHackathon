@@ -48,7 +48,24 @@ export default function LocationStats() {
   };
 
   return (
-    <div style={{ maxWidth: 480, margin: "40px auto", textAlign: "left", background: "#fff", borderRadius: 16, boxShadow: "0 4px 24px rgba(0,0,0,0.10)", padding: 32 }}>
+    <div style={{
+      height: "calc(100vh - 120px)", // Adjust 120px to match your header height
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundImage: "url('https://www.shutterstock.com/image-photo/night-planet-earth-space-light-600nw-2495143773.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center"
+    }}>
+      <div style={{
+        maxWidth: 480,
+        width: "100%",
+        textAlign: "left",
+        background: "#fff",
+        borderRadius: 16,
+        boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
+        padding: 32
+      }}>
       <h2 style={{ textAlign: "center", fontWeight: 700, fontSize: "2rem", marginBottom: 24, color: "#007bff" }}>Location Statistics</h2>
       <form onSubmit={handleSearch} style={{ display: "flex", gap: 12, marginBottom: 24, justifyContent: "center" }}>
         <input
@@ -89,6 +106,7 @@ export default function LocationStats() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
