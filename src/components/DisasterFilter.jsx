@@ -31,7 +31,7 @@ const DISASTER_TYPES = [
 export default function DisasterFilter({ selectedTypes, onChange }) {
   return (
     <div className="disaster-filter">
-      <span>Filter disasters:</span>
+  <span style={{ color: "#111", fontWeight: 600, fontSize: 18 }}>Filter disasters:</span>
       {DISASTER_TYPES.map((type) => (
         <label
           key={type.key}
@@ -46,6 +46,8 @@ export default function DisasterFilter({ selectedTypes, onChange }) {
             boxShadow: selectedTypes.includes(type.key)
               ? "0 2px 8px rgba(0,0,0,0.08)"
               : "none",
+            color: "#111",
+            fontWeight: 500
           }}
         >
           <input
@@ -70,7 +72,7 @@ export default function DisasterFilter({ selectedTypes, onChange }) {
               verticalAlign: "middle",
             }}
           />
-          {type.label}
+          <span style={{ color: "#111", fontWeight: 500 }}>{type.label}</span>
         </label>
       ))}
     </div>

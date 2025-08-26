@@ -47,16 +47,51 @@ export default function LocationStats() {
     setLoading(false);
   };
 
+  // Dropdown handler (simulate navigation)
+  const handleDropdownChange = (e) => {
+    const value = e.target.value;
+    if (value === "Map") {
+      window.location.reload(); // Or trigger your app's view change logic
+    } else if (value === "Globe") {
+      window.location.reload(); // Or trigger your app's view change logic
+    }
+    // Location Statistics does nothing
+  };
+
   return (
     <div style={{
-      height: "calc(100vh - 120px)", // Adjust 120px to match your header height
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       backgroundImage: "url('https://www.shutterstock.com/image-photo/night-planet-earth-space-light-600nw-2495143773.jpg')",
       backgroundSize: "cover",
-      backgroundPosition: "center"
+      backgroundPosition: "center",
+      zIndex: 3000,
+      flexDirection: "column"
     }}>
+      <div style={{ width: "100vw", display: "flex", justifyContent: "center", marginTop: "3vh", marginBottom: "-1vh", zIndex: 3100 }}>
+        <select onChange={handleDropdownChange} style={{
+          fontWeight: 700,
+          fontSize: "1.3rem",
+          padding: "12px 32px",
+          borderRadius: 12,
+          border: "2px solid #007bff",
+          background: "#fff",
+          color: "#222",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
+          outline: "none",
+          textAlign: "center"
+        }} defaultValue="Location Statistics">
+          <option>Map</option>
+          <option>Globe</option>
+          <option>Location Statistics</option>
+        </select>
+      </div>
       <div style={{
         maxWidth: 480,
         width: "100%",
@@ -64,8 +99,10 @@ export default function LocationStats() {
         background: "#fff",
         borderRadius: 16,
         boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
-        padding: 32
+        padding: 32,
+        position: "relative"
       }}>
+        <button onClick={() => window.location.reload()} style={{ position: "absolute", top: 18, right: 18, fontSize: 18, border: "none", background: "#007bff", color: '#fff', borderRadius: 8, padding: '8px 18px', fontWeight: 500, cursor: "pointer", zIndex: 10 }} title="Back to Map">Back</button>
       <h2 style={{ textAlign: "center", fontWeight: 700, fontSize: "2rem", marginBottom: 24, color: "#007bff" }}>Location Statistics</h2>
       <form onSubmit={handleSearch} style={{ display: "flex", gap: 12, marginBottom: 24, justifyContent: "center" }}>
         <input

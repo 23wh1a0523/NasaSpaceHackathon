@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+
 import MapView from "./components/MapView";
 import DisasterFilter from "./components/DisasterFilter";
 import Header from "./components/Header";
 import LocationStats from "./components/LocationStats";
+import Introduction from "./components/Introduction";
 import { fetchDisasterEvents } from "./services/eonet";
 
 const DISASTER_KEYS = ["wildfire", "volcano", "storm", "flood", "earthquake"];
@@ -14,11 +16,13 @@ const CATEGORY_MAP = {
   earthquake: ["Earthquakes"],
 };
 
+
 const App = () => {
   const [events, setEvents] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState(DISASTER_KEYS);
   const [activeView, setActiveView] = useState("Map");
   const [viewMode, setViewMode] = useState("2D");
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const getEvents = async () => {
@@ -34,6 +38,9 @@ const App = () => {
     return selectedTypes.some((type) => CATEGORY_MAP[type].includes(category));
   });
 
+  if (showIntro) {
+    return <Introduction onEnter={() => setShowIntro(false)} />;
+  }
   return (
     <div>
       <div
