@@ -1,3 +1,29 @@
+# 1D, 2D, 3D, Go! – NASA Space Apps Challenge
+
+This project is a web app to visualize NASA satellite data on interactive maps and 3D globes.  
+It processes raw datasets (CSV/JSON) and provides trajectory visualization to make Earth science data accessible.
+
+---
+
+## 🚀 Demo Video
+Watch the live demo here: [Project Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
+
+[![Watch the Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)]([https://youtube.com/your_video_link](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_))
+
+---
+
+## 🛠️ Tech Stack
+- JavaScript  
+- Web APIs  
+- CSV / JSON  
+
+---
+
+## 📂 Features
+- Visualization of NASA datasets on 2D/3D maps  
+- Data conversion utilities for trajectory visualization  
+- Simple interface for students and the public to explore Earth science data
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
