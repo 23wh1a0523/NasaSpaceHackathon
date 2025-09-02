@@ -26,7 +26,7 @@ export default function LocationStats() {
       if (!geoRes.data.length) throw new Error("Location not found");
       const { lat, lon, display_name } = geoRes.data[0];
       // Get weather from OpenWeatherMap using new API key
-      const weatherRes = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d726a90b4e97995864bfa9081101d167&units=metric`);
+      const weatherRes = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9e2e9e0006e5940e5fac6fcad1e8c4b5&units=metric`);
       // Get disasters from NASA EONET
       const eonetRes = await axios.get(`https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=100`);
       const disasters = eonetRes.data.events.filter(ev => {
