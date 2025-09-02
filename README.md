@@ -8,7 +8,8 @@ It processes raw datasets (CSV/JSON) and provides trajectory visualization to ma
 ## 🚀 Demo Video
 Watch the live demo here: [Project Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
 
-[![Watch the Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)]([https://youtube.com/your_video_link](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_))
+<!-- Thumbnail style (optional, needs a real image preview) -->
+[![Watch the Demo](https://img.shields.io/badge/Watch%20Demo-Video-blue?logo=google-drive)](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
 
 ---
 
