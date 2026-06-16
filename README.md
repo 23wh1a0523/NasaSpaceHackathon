@@ -1,12 +1,13 @@
-# Earth Pulse — NASA Space Apps Challenge
+# Earth Pulse ï¿½ NASA Space Apps Challenge
 
 Earth Pulse is a React + Vite web app for visualizing NASA disaster event data on interactive 2D maps and a 3D globe. The app loads live open disaster events from NASA's EONET API, filterable by category, and provides contextual emergency information for the selected location.
 
 ---
 
-## ?? Demo
+## ðŸš€ Demo
 Live demo available here:
 - [Project Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
+- Live site: https://nasa-space-hackathon-brown.vercel.app/
 
 ---
 
@@ -54,14 +55,14 @@ Live demo available here:
 ---
 
 ## ?? Project structure
-- `src/App.jsx` — main app with view selection and event filtering
-- `src/components/MapView.jsx` — 2D map and 3D globe rendering, marker interactions
-- `src/components/Header.jsx` — view toggle controls
-- `src/components/DisasterFilter.jsx` — category filter UI
-- `src/components/LocationStats.jsx` — additional statistics view
-- `src/components/Introduction.jsx` — startup intro screen
-- `src/services/eonet.js` — NASA EONET event API client
-- `vite.config.js` — Vite configuration
+- `src/App.jsx` ï¿½ main app with view selection and event filtering
+- `src/components/MapView.jsx` ï¿½ 2D map and 3D globe rendering, marker interactions
+- `src/components/Header.jsx` ï¿½ view toggle controls
+- `src/components/DisasterFilter.jsx` ï¿½ category filter UI
+- `src/components/LocationStats.jsx` ï¿½ additional statistics view
+- `src/components/Introduction.jsx` ï¿½ startup intro screen
+- `src/services/eonet.js` ï¿½ NASA EONET event API client
+- `vite.config.js` ï¿½ Vite configuration
 
 ---
 
