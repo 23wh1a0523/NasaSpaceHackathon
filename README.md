@@ -11,7 +11,7 @@ Live demo available here:
 
 ---
 
-## ?? What it does
+## What it does
 - Loads open disaster events from NASA EONET
 - Displays events as markers on a 2D map and a 3D globe
 - Filters disaster types: wildfires, volcanoes, severe storms, floods, earthquakes
@@ -22,7 +22,7 @@ Live demo available here:
 
 ---
 
-## ??? Tech stack
+## Tech stack
 - React 19
 - Vite 7
 - Leaflet / React Leaflet
@@ -32,7 +32,7 @@ Live demo available here:
 
 ---
 
-## ?? Installation
+##  Installation
 1. Clone the repository
 2. Install dependencies:
    ```bash
@@ -46,7 +46,7 @@ Live demo available here:
 
 ---
 
-## ?? Usage
+##  Usage
 - Use the header toggle to switch between `Map`, `Globe`, and `Location Statistics`
 - Select disaster categories with the filter control
 - Click event markers to view details, nearby hospitals, and emergency helplines
@@ -54,7 +54,7 @@ Live demo available here:
 
 ---
 
-## ?? Project structure
+##  Project structure
 - `src/App.jsx` � main app with view selection and event filtering
 - `src/components/MapView.jsx` � 2D map and 3D globe rendering, marker interactions
 - `src/components/Header.jsx` � view toggle controls
@@ -66,13 +66,10 @@ Live demo available here:
 
 ---
 
-## ?? Data sources
+##  Data sources
 - NASA EONET API: `https://eonet.gsfc.nasa.gov/api/v3/events?status=open`
 - OpenStreetMap / Overpass API for nearby hospital lookup
 
 ---
 
-## ?? Credits
-Built for the NASA Space Apps Challenge.
 
-If you want, I can also help add a live screenshot section or deployment instructions.
