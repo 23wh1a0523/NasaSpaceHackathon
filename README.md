@@ -1,39 +1,77 @@
-# 1D, 2D, 3D, Go! ‚Äì NASA Space Apps Challenge
+# Earth Pulse ó NASA Space Apps Challenge
 
-This project is a web app to visualize NASA satellite data on interactive maps and 3D globes.  
-It processes raw datasets (CSV/JSON) and provides trajectory visualization to make Earth science data accessible.
-
----
-
-## üöÄ Demo Video
-Watch the live demo here: [Project Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
-
-<!-- Thumbnail style (optional, needs a real image preview) -->
-[![Watch the Demo](https://img.shields.io/badge/Watch%20Demo-Video-blue?logo=google-drive)](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
+Earth Pulse is a React + Vite web app for visualizing NASA disaster event data on interactive 2D maps and a 3D globe. The app loads live open disaster events from NASA's EONET API, filterable by category, and provides contextual emergency information for the selected location.
 
 ---
 
-## üõ†Ô∏è Tech Stack
-- JavaScript  
-- Web APIs  
-- CSV / JSON  
+## ?? Demo
+Live demo available here:
+- [Project Demo](https://drive.google.com/drive/folders/19r4abqdz5RrEK3412wv2h5A6AFH8XFR_)
 
 ---
 
-## üìÇ Features
-- Visualization of NASA datasets on 2D/3D maps  
-- Data conversion utilities for trajectory visualization  
-- Simple interface for students and the public to explore Earth science data
+## ?? What it does
+- Loads open disaster events from NASA EONET
+- Displays events as markers on a 2D map and a 3D globe
+- Filters disaster types: wildfires, volcanoes, severe storms, floods, earthquakes
+- Provides a location statistics view for selected events
+- Fetches nearby hospitals using OpenStreetMap / Overpass API
+- Shows emergency helpline numbers for selected regions
+- Includes an intro screen and a clean map-driven UI
 
-# React + Vite
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ??? Tech stack
+- React 19
+- Vite 7
+- Leaflet / React Leaflet
+- react-globe.gl
+- Axios
+- ESLint
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ?? Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the local URL shown in the terminal
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ?? Usage
+- Use the header toggle to switch between `Map`, `Globe`, and `Location Statistics`
+- Select disaster categories with the filter control
+- Click event markers to view details, nearby hospitals, and emergency helplines
+- The app fetches live open disasters from NASA EONET each time it loads
+
+---
+
+## ?? Project structure
+- `src/App.jsx` ó main app with view selection and event filtering
+- `src/components/MapView.jsx` ó 2D map and 3D globe rendering, marker interactions
+- `src/components/Header.jsx` ó view toggle controls
+- `src/components/DisasterFilter.jsx` ó category filter UI
+- `src/components/LocationStats.jsx` ó additional statistics view
+- `src/components/Introduction.jsx` ó startup intro screen
+- `src/services/eonet.js` ó NASA EONET event API client
+- `vite.config.js` ó Vite configuration
+
+---
+
+## ?? Data sources
+- NASA EONET API: `https://eonet.gsfc.nasa.gov/api/v3/events?status=open`
+- OpenStreetMap / Overpass API for nearby hospital lookup
+
+---
+
+## ?? Credits
+Built for the NASA Space Apps Challenge.
+
+If you want, I can also help add a live screenshot section or deployment instructions.
